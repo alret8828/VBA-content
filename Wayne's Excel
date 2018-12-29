@@ -1,0 +1,53 @@
+Sub 设置需要页数()
+Call 关闭自动计算
+Sheets("综合办公室考勤呈报表").Select
+If Range("A43").Value <> "" Then
+ActiveSheet.PageSetup.PrintArea = "$A$1:$Q$52"
+Set ActiveSheet.HPageBreaks(1).Location = Range("A14")
+Set ActiveSheet.HPageBreaks(2).Location = Range("A27")
+Set ActiveSheet.HPageBreaks(3).Location = Range("A40")
+ElseIf Range("A30").Value <> "" Then
+ActiveSheet.PageSetup.PrintArea = "$A$1:$Q$39"
+Set ActiveSheet.HPageBreaks(1).Location = Range("A14")
+Set ActiveSheet.HPageBreaks(2).Location = Range("A27")
+ElseIf Range("A17").Value <> "" Then
+ActiveSheet.PageSetup.PrintArea = "$A$1:$Q$26"
+Set ActiveSheet.HPageBreaks(1).Location = Range("A14")
+ElseIf Range("A6").Value <> "" Then
+ActiveSheet.PageSetup.PrintArea = "$A$1:$Q$13"
+End If
+Sheets("综合办公室加班呈报表").Select
+If Range("A29").Value <> "" Then
+ActiveSheet.PageSetup.PrintArea = "$A$1:$K$55"
+Set ActiveSheet.HPageBreaks(1).Location = Range("A27")
+ElseIf Range("A4").Value <> "" Then
+ActiveSheet.PageSetup.PrintArea = "$A$1:$K$26"
+Else
+End If
+Sheets("公司领导考勤呈报表").Select
+If Range("A43").Value <> "" Then
+ActiveSheet.PageSetup.PrintArea = "$A$1:$Q$52"
+Set ActiveSheet.HPageBreaks(1).Location = Range("A14")
+Set ActiveSheet.HPageBreaks(2).Location = Range("A27")
+Set ActiveSheet.HPageBreaks(3).Location = Range("A40")
+ElseIf Range("A30").Value <> "" Then
+ActiveSheet.PageSetup.PrintArea = "$A$1:$Q$39"
+Set ActiveSheet.HPageBreaks(1).Location = Range("A14")
+Set ActiveSheet.HPageBreaks(2).Location = Range("A27")
+ElseIf Range("A17").Value <> "" Then
+ActiveSheet.PageSetup.PrintArea = "$A$1:$Q$26"
+Set ActiveSheet.HPageBreaks(1).Location = Range("A14")
+ElseIf Range("A6").Value <> "" Then
+ActiveSheet.PageSetup.PrintArea = "$A$1:$Q$13"
+End If
+Sheets("公司领导加班呈报表").Select
+If Range("A29").Value <> "" Then
+ActiveSheet.PageSetup.PrintArea = "$A$1:$K$55"
+Set ActiveSheet.HPageBreaks(1).Location = Range("A27")
+ElseIf Range("A4").Value <> "" Then
+ActiveSheet.PageSetup.PrintArea = "$A$1:$K$26"
+Else
+End If
+Call 打开自动计算
+End Sub
+
